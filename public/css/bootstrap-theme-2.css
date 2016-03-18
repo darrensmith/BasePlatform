@@ -1,0 +1,316 @@
+/*!
+ * Bootstrap v3.1.1 (http://getbootstrap.com)
+ * IndustrySwarm Genesis Theme v1.0
+ * Copyright 2011-2014 Twitter, Inc. and 2015 IndustrySwarm Pty Ltd
+ */
+
+
+ /* 
+   --------------------------------------------------
+   COLOR PALETTES
+   [Main]; [Background]; [Secondary1]; [Secondary2]
+   Black on White: #000; #fff; #555;
+   Orange-Red on White: #fe4822; #fff; #feb394; 
+   --------------------------------------------------
+*/
+* {
+	color:#000;
+}
+
+a {
+	color: #000;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, 
+.h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, 
+h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, 
+.h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+  color: #555;
+}
+
+a:hover,
+a:focus {
+  color: #555;
+}
+
+.navbar-brand {
+  color: #000;
+}
+
+.navbar-nav > li > a {
+  color: #000;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdown-menu > li {
+  color: #000;
+}
+
+.breadcrumb {
+	background-color:#fff;
+}
+
+.breadcrumb>.active {
+  color: #555;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+}
+
+.jumbotron {
+ border-color: #000;
+ background-color: #fff;
+}
+
+#footer {
+	color:#000;
+	background-color:#fff;
+}
+
+@media (min-width: 768px) {
+  .navbar-two>.navbar-nav>.li-boxed>a {
+	 border-color: #000;
+  }
+}
+
+.navbar-toggle {
+  border-color: #000;
+}
+
+.navbar-toggle .icon-bar {
+  border-color: #000;
+}
+
+
+
+
+
+
+
+ /* 
+   ------
+   COMMON
+   ------
+*/
+
+
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 0px;
+}
+
+.page-header {
+  margin: 0px 0 20px;
+}
+
+/* 
+   ----------
+   NAVIGATION
+   ----------
+*/
+
+@media (min-width: 768px){
+  .navbar-right-custom {
+    float: right!important;
+  }
+}
+
+.navbar-nav > li > a {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav>li>a {
+  	padding-top: 3px;
+  	padding-bottom: 3px;
+  	padding-left: 8px;
+  	padding-right: 8px;
+  	margin-top: 7px;
+  	margin-left: 15px;
+  }
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+}
+
+.navbar-toggle {
+  border: 1px solid;
+}
+
+.navbar-toggle .icon-bar {
+  border-radius: 5px;
+  border-bottom: solid 3px;
+}
+
+@media (min-width: 768px) {
+  .navbar-two {
+  	margin-top: 50px;
+    display:none;
+  }
+}
+
+.dropdown-menu > li {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .navbar-two>.navbar-nav>li>a {
+  	padding-left: 8px;
+  	padding-right: 8px;
+  	margin-left: 0px;
+  	margin-right: 15px;
+    display:none;
+  }
+  .navbar-two>.navbar-nav>.li-boxed>a {
+  	border: solid 1px;
+  }
+}
+
+.navbar-toggle {
+	width: 44px;
+	height: 37px;
+}
+
+@media (min-width: 768px) {
+	.collapse {
+		display:block;
+	}
+}
+
+.toggle-one {
+  display:none;
+}
+
+/* 
+   ----------
+   BREADCRUMB
+   ----------
+*/
+
+.breadcrumb {
+	font-size:10px;
+	margin-left:0px;
+	padding-left:0px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .breadcrumb {
+	 margin-top: 60px;
+  }
+}
+
+/* 
+   -------
+   BUTTONS
+   -------
+*/
+
+.btn {
+  border-radius: 0px;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+  border-radius: 0px;
+}
+
+/* 
+   ---------
+   JUMBOTRON
+   ---------
+*/
+
+.container .jumbotron {
+  border-radius: 0px;
+}
+
+.jumbotron {
+ border: solid 1px;
+}
+
+/* 
+   ---------
+   eCOMMERCE
+   ---------
+*/
+
+.refinements-title {
+  text-transform: uppercase;
+  font-size:14px;
+  font-weight: bold;
+}
+
+.dimension-title {
+  text-transform: uppercase;
+  font-size:10px;
+  font-weight: bold;
+  margin-top:20px;
+}
+
+.refinements-list > ul {
+  margin-left:5px;
+  padding-left:0px;
+}
+
+.refinements-list > ul > li {
+  text-transform: uppercase;
+  font-size:10px;
+  list-style: none;
+  margin-top:3px;
+}
+
+/* 
+   ------
+   FOOTER
+   ------
+*/
+
+#footer {
+	margin-top: 50px;
+  text-transform: uppercase;
+	font-size:10px;
+}
+
+.single-line-footer {
+	margin-top:40px;
+	margin-bottom:20px;
+}
+
+.verbose-footer-title {
+	font-size:14px; 
+	font-weight:bold;
+}
+
+.verbose-footer-links {
+	text-decoration:none;
+	padding-left:0px;
+}
+
+.verbose-footer-links > li {
+	list-style: none;  
+  margin-bottom:3px;
+}

@@ -1,0 +1,1 @@
+BasePlatform for NodeJS

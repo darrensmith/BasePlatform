@@ -1,0 +1,493 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"open",
+				"open"
+			],
+			[
+				"count",
+				"count"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/templates/register-voice-print.dust",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/register-voice-print/setup-payment-method/index.js",
+			"settings":
+			{
+				"buffer_size": 1667,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/calls/index.js",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/darresmith/VoiceReferenceTxn",
+		"/Users/darresmith/VoiceReferenceTxn/config",
+		"/Users/darresmith/VoiceReferenceTxn/controllers",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/authenticate",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/calls",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/configuration",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/register-voice-print",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/register-voice-print/setup-payment-method",
+		"/Users/darresmith/VoiceReferenceTxn/models",
+		"/Users/darresmith/VoiceReferenceTxn/public",
+		"/Users/darresmith/VoiceReferenceTxn/public/templates"
+	],
+	"file_history":
+	[
+		"/Users/darresmith/VoiceReferenceTxn/models/customers.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/register-voice-print/setup-payment-method/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/register-voice-print/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/public/templates/register-voice-print.dust",
+		"/Users/darresmith/VoiceReferenceTxn/config/config.json",
+		"/Users/darresmith/VoiceReferenceTxn/config/development.json",
+		"/Users/darresmith/VoiceReferenceTxn/models/cart.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/register-voice-print/paypal-start/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/package.json",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/register-voice-print/paypal-return/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/authenticate/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/call-details/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/configuration/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/calls/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/models/calls.js",
+		"/Users/darresmith/VoiceReferenceTxn/public/templates/layouts/master.dust",
+		"/Users/darresmith/VoiceReferenceTxn/public/templates/calls.dust",
+		"/Users/darresmith/VoiceReferenceTxn/README.md",
+		"/Users/darresmith/VoiceReferenceTxn/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/lib/voiceIT.js",
+		"/Users/darresmith/VoiceReferenceTxn/public/templates/authenticate.dust",
+		"/Users/darresmith/VoiceReferenceTxn/controllers/index.js",
+		"/Users/darresmith/VoiceReferenceTxn/lib/mysqlUtil.js",
+		"/Users/darresmith/VoiceReferenceTxn/server.js",
+		"/Users/darresmith/mock-drop-in-payments/readme.md",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Embeddable Payment Experiences/Mock Drop-In Checkout/readme.md",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Embeddable Payment Experiences/Mock Drop-In Checkout/mock-checkout/hermes/review.html",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Embeddable Payment Experiences/Mock Drop-In Checkout/mock-checkout.js",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Embeddable Payment Experiences/Mock Drop-In Checkout/mock-checkout/hermes/guest-checkout.html",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Embeddable Payment Experiences/Mock Drop-In Checkout/pay-test.html",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Embeddable Payment Experiences/Mock Drop-In Checkout/test.html",
+		"/Users/darresmith/Desktop/in-context-drop-in/login.html",
+		"/Users/darresmith/Desktop/in-context-drop-in/guest-checkout.html",
+		"/Users/darresmith/Desktop/in-context-drop-in/review.html",
+		"/Users/darresmith/Box Sync/Integration Services/Tools/Prototypes/Vertical Examples/paypal-ticketing/paypal-ticketing-customisation/PayPal-Login.htm",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECM/4.Minicart.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECM/5.Cart.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECM/9.PayPal-Checkout-Review-Page.htm",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECM/8.PayPal-Checkout-Login-Page.htm",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECS/7.PayPal-Checkout-Review-Page.htm",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECS/6.PayPal-Checkout-Login-Page.htm",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECM/10.Thankyou.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECM/7.Payment-Selection.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/ECS/5.Cart.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/5.Cart.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/8.Express-Checkout-2.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/4.Minicart.html",
+		"/Applications/MAMP/htdocs/pumpkin-patch/8.Express-Checkout-3.html",
+		"/Applications/MAMP/htdocs/permissions/samples/GenerateOAuthSignature.php",
+		"/Applications/MAMP/htdocs/express-checkout/samples/ExpressCheckout_InContext/SetExpressCheckout.html.php",
+		"/Applications/MAMP/htdocs/express-checkout/samples/ExpressCheckout_InContext/SetExpressCheckout.php",
+		"/Applications/MAMP/htdocs/express-checkout/samples/ExpressCheckout/SetExpressCheckout.php",
+		"/Users/darresmith/Downloads/touchstonejs-starter-master/gulpfile.js",
+		"/Users/darresmith/Documents/random-things/image-gallery.html",
+		"/Users/darresmith/Documents/random-things/quickview.html",
+		"/Users/darresmith/Documents/random-things/editor-html.html",
+		"/Users/darresmith/Desktop/Rapid Prototyping Tool/Examples/COD/index.htm",
+		"/Users/darresmith/Documents/random-things/editor-canvas.html",
+		"/Users/darresmith/paypal-event-platform/public_html/events/onboarding/return.php",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/config.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/wristbands/tab.php",
+		"/Users/darresmith/paypal-event-platform/db/amendments/20150722.sql",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Bingle/Dec 2014/Prototypes/New Quote and Policy/index.htm",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/adminUsers/list.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/index.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/utility.php",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens/wearables.js",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens/createUpdateCustomer.js",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/apiInterface.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/customers/update.php",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens/createUpdateAdminUser.js",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens/createUpdateMerchant.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/customers/removeEvent.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/merchants/connectedEvents.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/merchants/removeEvent.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/merchants/addEvent.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/customers/addEvent.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/customers/connectedEvents.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/customers/create.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/adminUsers/create.php",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/session.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/merchants/create.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/merchants/list.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/customers/list.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/events/list.php",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens/events.js",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens.js",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/menu.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/events/details.php",
+		"/Users/darresmith/Desktop/BYOJet/a1-PayPal-Checkout-Login-Page.htm",
+		"/Users/darresmith/Desktop/BYOJet/3-results.html",
+		"/Users/darresmith/Desktop/BYOJet/9-payment-pay-with-paypal.html",
+		"/Users/darresmith/Desktop/BYOJet/7-passenger-information.html",
+		"/Users/darresmith/Desktop/BYOJet/a2-PayPal-Checkout-Review-Page.htm",
+		"/Users/darresmith/Desktop/BYOJet/5-sign-in-checkout-with-paypal.html",
+		"/Users/darresmith/Desktop/BYOJet/4-summary.html",
+		"/Users/darresmith/Desktop/BYOJet/1-homepage.html",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/session/login.php",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/course-registration.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/course-registration-success.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/courses-single.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/contact-us.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/about-us.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/404.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/courses.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/events-single.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/events.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/formatting.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/full-width.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/gallery-single.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/gallery.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/index.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/news-single.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/news-stacked.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/news.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/school-leadership.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/search-results.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/sidebar-left.html",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New/bootstrap/css/bootstrap-theme.css",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/screens/customers.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/adminUsers/addEvent.php",
+		"/Users/darresmith/paypal-event-platform/public_html/admin/js/nfcPayAdmin/main.js",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/adminUsers/delete.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/adminUsers/connectedEvents.php",
+		"/Users/darresmith/paypal-event-platform/public_html/api/objects/adminUsers/removeEvent.php",
+		"/Users/darresmith/Downloads/PayPalSvc.wsdl",
+		"/Applications/MAMP/htdocs/permissions/lib/PayPal/Service/PermissionsService.php",
+		"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University/index.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/darresmith/Box Sync/Integration Services/Client Engagement/Merchants/Education (Australia) - Many Merchants/Payments University New",
+			"/Users/darresmith/paypal-event-platform"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"shipping-address-section",
+			"paywith asideView",
+			"reviews ng-scope",
+			"';\n",
+			"appinline",
+			"id=\"main\"",
+			"iframe",
+			"104.97",
+			"qcTabPage clearfix",
+			"my bag",
+			"104.97",
+			"89.50",
+			"Bellabox",
+			"cart-crumb",
+			"Continue to PayPal",
+			"});\n",
+			"echo",
+			"tlvs",
+			"<form ",
+			"TVSN",
+			"AMADEUS-78(T)",
+			"<a href=\"https://www.byojet.com/AJAX_DoBooking.asp",
+			"<a href=\"https://www.byojet.com/AJAX_DoBooking.asp?ContactTitle=Mr&amp;",
+			"<a href=\"https://www.byojet.com/AJAX_DoBooking.asp",
+			"89.50",
+			"Claudia",
+			"<a href=\"https://www.byojet.com/AJAX_SignIn.asp?Booking=true#\">",
+			"<a href=\"http://www.byojet.com/AJAX_ViewItinerary.asp#\" onclick=\"document.getEle",
+			"<a href=\"http://www.byojet.com/AJAX_SearchFlights.asp",
+			"<input type=\"text\" id=\"Desintation\" name=\"Destination\"",
+			"BUNTINGTON PUBLIC SCHOOLS",
+			"2015 BUNTINGTON PUBLIC SCHOOLS",
+			";\"",
+			"#ea5644",
+			":hover",
+			"50.50",
+			"44.50",
+			"<form",
+			"DARREN",
+			"iframe",
+			"TVSN",
+			"();\n",
+			"pep_config",
+			"CREDIT",
+			"CREDIT CARD",
+			"pmmdetails-card-inner",
+			"console.log",
+			"<VirtualHost",
+			"paypal",
+			"Robert",
+			"graysonline",
+			"107.94",
+			"Continue",
+			"7-",
+			"paypal",
+			"openChildWindow",
+			".js",
+			"\"\";\n",
+			"?>\n",
+			"'',\n",
+			"?>\n",
+			"<form",
+			"7-Success",
+			"<form",
+			"PayPal Checkout-Rev",
+			"checkout",
+			"pinkIsh",
+			"pinkButt",
+			".panel-body {"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"PAYPAL UNIVERSITY",
+			"2015 PAYPAL UNIVERSITY",
+			"#0079c1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/templates/register-voice-print.dust",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1149,
+								1149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "controllers/register-voice-print/setup-payment-method/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								896,
+								896
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 201.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "controllers/calls/index.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "VoiceReferenceTxn.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 282.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

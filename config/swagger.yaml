@@ -1,0 +1,535 @@
+swagger: '2.0'
+info:
+  title: BasePlatform
+  description: A NodeJS Platform as a Service
+  version: 1.0.0
+schemes:
+  - http
+  - https
+basePath: /api/v1
+produces:
+  - application/json
+paths:
+  '/tools/shutdown':
+    get:
+      summary: Shutdown Server
+      description: |
+        Shutdown Server
+      tags:
+        - Tooling
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/tools/clear-server':
+    get:
+      summary: Clear Server
+      description: |
+        Wipes all data from the platform
+      tags:
+        - Tooling
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/tools/test-credentials':
+    get:
+      summary: Test Credentials
+      description: |
+        Used to validate a set of credentials (clientId+Secret or oAuth Token)
+      tags:
+        - Tooling
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications':
+    get:
+      summary: Application List
+      description: |
+        Get list of applications
+      tags:
+        - Applications
+      responses:
+        '200':
+          description: An array of application objects
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Application'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create Application
+      description: |
+        Create Application
+      parameters:
+        - name: title
+          in: formData
+          description: Title
+          required: false
+          type: string
+        - name: description
+          in: formData
+          description: Description
+          required: false
+          type: string
+        - name: appPath
+          in: formData
+          description: Application Path
+          required: false
+          type: string
+        - name: targetServer
+          in: formData
+          description: Target Server
+          required: false
+          type: string
+        - name: route
+          in: formData
+          description: Route
+          required: false
+          type: string
+        - name: zip
+          in: formData
+          description: ZIP File
+          required: false
+          type: file
+      tags:
+        - Applications
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications/{appId}':
+    get:
+      summary: Application Details
+      description: |
+        Get details of an application
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string
+      tags:
+        - Applications
+      responses:
+        '200':
+          description: An application object
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Application'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update Application
+      description: |
+        Update Application
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string        
+        - name: title
+          in: formData
+          description: Title
+          required: false
+          type: string
+        - name: description
+          in: formData
+          description: Description
+          required: false
+          type: string
+        - name: appPath
+          in: formData
+          description: Application Path
+          required: false
+          type: string
+        - name: targetServer
+          in: formData
+          description: Target Server
+          required: false
+          type: string
+        - name: route
+          in: formData
+          description: Route
+          required: false
+          type: string
+      tags:
+        - Applications
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Delete Application
+      description: |
+        Delete Application
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string  
+      tags:
+        - Applications
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications/{appId}/deployments':
+    get:
+      summary: Deployment List
+      description: |
+        Get list of deployments
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string   
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: An array of deployment objects
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Deployment'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create Deployment
+      description: |
+        Create Deployment
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string   
+        - name: gitRepository
+          in: formData
+          description: GIT Repository
+          required: false
+          type: string
+        - name: zipLocation
+          in: formData
+          description: ZIP Location
+          required: false
+          type: string
+        - name: zip
+          in: formData
+          description: ZIP File
+          required: false
+          type: file          
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications/{appId}/deployments/{deployId}':
+    get:
+      summary: Deployment Details
+      description: |
+        Get details of a deployment
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string
+        - name: deployId
+          in: path
+          description: Deployment ID
+          required: true
+          type: string
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A deployment object
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Deployment'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update Deployment
+      description: |
+        Update Deployment
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string     
+        - name: deployId
+          in: path
+          description: Deploy ID
+          required: true
+          type: string       
+        - name: gitRepository
+          in: formData
+          description: GIT Repository
+          required: false
+          type: string
+        - name: zipLocation
+          in: formData
+          description: ZIP Location
+          required: false
+          type: string
+        - name: zip
+          in: formData
+          description: ZIP File
+          required: false
+          type: file   
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Delete Deployment
+      description: |
+        Delete Deployment
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string 
+        - name: deployId
+          in: path
+          description: Deployment ID
+          required: true
+          type: string  
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications/{appId}/deployments/{deployId}/start':
+    post:
+      summary: Start Deployment
+      description: |
+        Start Deployment  
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string 
+        - name: deployId
+          in: path
+          description: Deployment ID
+          required: true
+          type: string        
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications/{appId}/deployments/{deployId}/stop':
+    post:
+      summary: Stop Deployment
+      description: |
+        Stop Deployment    
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string 
+        - name: deployId
+          in: path
+          description: Deployment ID
+          required: true
+          type: string      
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/applications/{appId}/deployments/{deployId}/restart':
+    post:
+      summary: Restart Deployment
+      description: |
+        Restart Deployment    
+      parameters:
+        - name: appId
+          in: path
+          description: Application ID
+          required: true
+          type: string 
+        - name: deployId
+          in: path
+          description: Deployment ID
+          required: true
+          type: string      
+      tags:
+        - Deployments
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Application:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier
+      title:
+        type: string
+        description: Title
+      description:
+        type: string
+        description: Description
+      appPath:
+        type: string
+        description: App Path
+      targetServer:
+        type: string
+        description: Target Server
+      route:
+        type: string
+        description: Route
+  Deployment:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier
+      gitRepository:
+        type: string
+        description: GIT Repository
+      zipLocation:
+        type: string
+        description: ZIP Location
+      zipUploaded:
+        type: string
+        description: ZIP Uploaded
+  Success:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier of object
+      type:
+        type: string
+        description: 'Type of object (user, event, etc)'
+      result:
+        type: string
+        description: Success
+      action:
+        type: string
+        description: 'Create, Update, Delete or [Other]'
+      shortMessage:
+        type: string
+        description: Short message describing success
+      longMessage:
+        type: string
+        description: Long message describing success
+      supplementary:
+        type: object
+        description: Contains supplementary data for the request
+  Error:
+    type: object
+    properties:
+      result:
+        type: string
+        description: Error
+      code:
+        type: integer
+        format: int32
+        description: Error code
+      shortMessage:
+        type: string
+        description: Short error message
+      longMessage:
+        type: string
+        description: Long error message
+      correlationId:
+        type: string
+        description: Log ID used for error tracking and troubleshooting

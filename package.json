@@ -1,0 +1,60 @@
+{
+    "name" : "BasePlatform",
+    "description" : "A NodeJS Platform as a Service",
+    "version" : "0.1.0",
+    "author" : "Darren Smith <contact@darrensmith.com.au>",
+    "contributors" : [],
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/darrensmith/baseplatform.git"
+    },
+    "bugs" : "http://github.com/darrensmith/baseplatform/issues",
+    "publishConfig" : {
+        "registry" : "https://registry.npmjs.org"
+    },
+    "engines" : {
+        "node" : "~0.10.22"
+    },
+    "dependencies": {
+        "express": "^4.0.0",
+        "body-parser": "^1.9.0",
+        "swaggerize-express": "^4.0.0",
+        "passport": "^0.3.2",
+        "passport-oauth": "^1.0.0",
+        "passport-http": "^0.3.0",
+        "passport-http-bearer": "1.0.1",
+        "passport-oauth2-client-password": "0.1.2",
+        "passport-custom": "^1.0.5",
+        "oauth2orize": "^1.2.0",
+        "socket.io": "^1.3.7",
+        "strict-rate-limiter": "^0.1.1",
+        "swagger-ui": "^2.1.3",
+        "orm": "^2.1.29",
+        "mysql": "^2.10.0",
+        "connect-flash": "^0.1.1",
+        "express-session": "^1.12.1",
+        "uid2": "^0.0.3",
+        "request": "^2.62.0",
+        "http-proxy": "1.13.2",
+        "multer": "1.1.0",
+        "unzip2": "0.2.5",
+        "decompress-unzip": "3.4.0",
+        "decompress": "3.0.0",
+        "extract-zip": "1.5.0"
+    },
+    "devDependencies": {
+        "tape": "^3.0.0",
+        "js-yaml": "^3.2.6",
+        "jshint": "^2.4.1",
+        "istanbul": "~0.2.3",
+        "enjoi": "~0.1.16" ,
+        "supertest": "~0.13.0"
+    },
+    "scripts": {
+        "test": "tape tests/*.js",
+        "cover": "istanbul cover tape -- test/*.js",
+        "lint": "jshint -c .jshintrc --exclude ./node_modules .",
+        "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config/swagger.yaml"
+    },
+    "main" : "./server"
+}
