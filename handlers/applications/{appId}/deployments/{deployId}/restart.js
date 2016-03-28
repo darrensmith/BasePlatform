@@ -45,9 +45,11 @@ module.exports = {
             }
 
             // Kill child process and restart it
-            app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId].kill('SIGINT');
+            if(app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId]){
+                app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId].kill('SIGINT');                
+            }
             const fork = require('child_process').fork;
-            app.locals.settings.deployedProcesses[eq.params.appId+'-'+req.params.deployId] = fork('./deployments/'+req.params.appId+'-'+req.params.deployId+'/server.js');
+            app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId] = fork('./deployments/'+req.params.appId+'-'+req.params.deployId+'/server.js');
 
             var output = {
                 id: '',

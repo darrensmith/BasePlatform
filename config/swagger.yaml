@@ -453,6 +453,251 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
+  '/machines':
+    get:
+      summary: Machine List
+      description: |
+        Get list of machines
+      tags:
+        - Machines
+      responses:
+        '200':
+          description: An array of machine objects
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Machine'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create Machine
+      description: |
+        Create Application
+      parameters:
+        - name: name
+          in: formData
+          description: Machine Name
+          required: false
+          type: string
+        - name: description
+          in: formData
+          description: Machine Description
+          required: false
+          type: string
+        - name: machineUrl
+          in: formData
+          description: Machine URL
+          required: false
+          type: string
+      tags:
+        - Machines
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/machines/{machineId}':
+    get:
+      summary: Machine Details
+      description: |
+        Get details of a machine
+      parameters:
+        - name: machineId
+          in: path
+          description: Machine ID
+          required: true
+          type: string
+      tags:
+        - Machines
+      responses:
+        '200':
+          description: A machine object
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Machine'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update Machine
+      description: |
+        Update Machine
+      parameters:
+        - name: machineId
+          in: path
+          description: Machine ID
+          required: true
+          type: string        
+        - name: name
+          in: formData
+          description: Machine Name
+          required: false
+          type: string
+        - name: description
+          in: formData
+          description: Machine Description
+          required: false
+          type: string
+        - name: machineUrl
+          in: formData
+          description: Machine URL
+          required: false
+          type: string
+      tags:
+        - Machines
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Delete Machine
+      description: |
+        Delete Machine
+      parameters:
+        - name: machineId
+          in: path
+          description: Machine ID
+          required: true
+          type: string  
+      tags:
+        - Machines
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/platform-details':
+    get:
+      summary: Platform Details List
+      description: |
+        Get list of platform details
+      tags:
+        - Platform Details
+      responses:
+        '200':
+          description: An array of platform detail objects
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PlatformDetail'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create Parameter
+      description: |
+        Create Platform Detail Parameter
+      parameters:
+        - name: parameter
+          in: formData
+          description: Parameter
+          required: true
+          type: string
+        - name: value
+          in: formData
+          description: Value
+          required: false
+          type: string
+      tags:
+        - Platform Details
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  '/platform-details/{parameter}':
+    get:
+      summary: Platfrom Detail Parameter
+      description: |
+        Get a single platform detail parameter
+      parameters:
+        - name: parameter
+          in: path
+          description: Parameter
+          required: false
+          type: string
+      tags:
+        - Platform Details
+      responses:
+        '200':
+          description: A platform detail object
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PlatformDetail'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      summary: Update Platform Details
+      description: |
+        Update Platform Detail Parameter
+      parameters:
+        - name: parameter
+          in: path
+          description: Parameter
+          required: true
+          type: string        
+        - name: value
+          in: formData
+          description: Value
+          required: false
+          type: string
+      tags:
+        - Platform Details
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Delete Platform Detail
+      description: |
+        Delete Platform Detail
+      parameters:
+        - name: parameter
+          in: path
+          description: Parameter
+          required: true
+          type: string  
+      tags:
+        - Machines
+      responses:
+        '200':
+          description: A success object
+          schema:
+            $ref: '#/definitions/Success'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
 definitions:
   Application:
     type: object
@@ -490,6 +735,30 @@ definitions:
       zipUploaded:
         type: string
         description: ZIP Uploaded
+  Machine:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier
+      name:
+        type: string
+        description: Machine Name
+      description:
+        type: string
+        description: Machine Description
+      machineUrl:
+        type: string
+        description: Machine URL
+  PlatformDetail:
+    type: object
+    properties:
+      parameter:
+        type: string
+        description: Platform Detail Parameter
+      value:
+        type: string
+        description: Platform Detail Value
   Success:
     type: object
     properties:

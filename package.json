@@ -37,10 +37,8 @@
         "request": "^2.62.0",
         "http-proxy": "1.13.2",
         "multer": "1.1.0",
-        "unzip2": "0.2.5",
-        "decompress-unzip": "3.4.0",
-        "decompress": "3.0.0",
-        "extract-zip": "1.5.0"
+        "extract-zip": "1.5.0",
+        "unzip-to-s3": "1.0.0"
     },
     "devDependencies": {
         "tape": "^3.0.0",

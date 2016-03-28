@@ -1,12 +1,12 @@
 var passport = require("passport");
 
 /**
- * Operations on /applications
+ * Operations on /machines
  */
 module.exports = {
     
     /**
-     * Get list of applications
+     * Get list of machines
 
      * parameters: 
      * produces: 
@@ -20,7 +20,7 @@ module.exports = {
     ],
     
     /**
-     * Creates a new application
+     * Creates a new machines
 
      * parameters: 
      * produces: 
@@ -33,22 +33,13 @@ module.exports = {
             var description = req.body.description;
             var machineUrl = req.body.machineUrl;
 
-            var appExists = false;
-
-            for (var i = app.locals.settings.Machines.length - 1; i >= 0; i--) {
-                if(app.locals.settings.Machines[i].name == name)
-                    appExists = true;
-            }
-
-            if(!appExists){
-                app.locals.settings.Machines.push({
-                    machineId: app.locals.settings.latestMachineId,
-                    name: name,
-                    description: description,
-                    machineUrl: machineUrl
-                });
-                app.locals.settings.latestMachineId++;
-            }
+            app.locals.settings.Machines.push({
+                machineId: app.locals.settings.latestMachineId,
+                name: name,
+                description: description,
+                machineUrl: machineUrl
+            });
+            app.locals.settings.latestMachineId++;
 
             var output = {
                 id: (app.locals.settings.latestMachineId - 1),

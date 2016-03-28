@@ -59,6 +59,7 @@ module.exports = {
             // TODO: Start process
             const fork = require('child_process').fork;
             app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId] = fork('./deployments/'+req.params.appId+'-'+req.params.deployId+'/server.js');
+            application.Deployments[req.params.deployId].status = "Running";
 
             var output = {
                 id: (app.locals.settings.Applications[req.params.appId].latestDeployId - 1),

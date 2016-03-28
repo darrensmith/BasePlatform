@@ -1,49 +1,35 @@
 var passport = require("passport");
-var fs = require('fs');
 
 /**
- * Operations on /applications/{appId}
+ * Operations on /machines/{machineId}
  */
 module.exports = {
     
     /**
-     * Get detail for a specified applicaation
+     * Get detail for a specified machine
 
-     * parameters: appId
+     * parameters: machineId
      * produces: 
      */
     get: [
         //passport.authenticate(['bearer','basic','oauth2-client-password'], {failureFlash:true}),
         function (req, res) {
 
-            var appDetails = app.locals.settings.Applications[req.params.appId];
+            var machineDetails = app.locals.settings.Machines[req.params.machineId];
 
-            var appOutput = {
-                appId: appDetails.appId,
-                title: appDetails.title,
-                description: appDetails.description,
-                appPath: appDetails.appPath,
-                targetServer: appDetails.targetServer,
-                route:appDetails.route
-            }
-
-            if(appOutput){
-                appOutput.Statistics = app.locals.settings.AppStatistics[req.params.appId];
-            }
-
-            if(!appOutput){
+            if(!machineDetails){
                 var output = {}
                 res.send(output);
             } else {
-                res.send(appOutput);
+                res.send(machineDetails);
             }
         } 
     ],
     
     /**
-     * Update an existing application
+     * Update an existing machine
 
-     * parameters: appId
+     * parameters: machineId
      * produces: 
      */
     put: [
@@ -58,18 +44,7 @@ module.exports = {
                 appDetails.appPath = req.body.appPath;
                 appDetails.targetServer = req.body.targetServer;
                 appDetails.route = req.body.route;
-                app.locals.settings.proxyRoutes[req.body.route] = {
-                    targetServer: req.body.targetServer
-                }
-
-                fs.writeFile('./config/saved-state/applications.json',JSON.stringify(app.locals.settings.Applications),function(err){
-                    if(err){console.log('Failed to update local applications state file');}
-                });
-
-                fs.writeFile('./config/saved-state/proxyRoutes.json',JSON.stringify(app.locals.settings.proxyRoutes),function(err){
-                    if(err){console.log('Failed to update proxy routes file');}
-                });
-
+                app.locals.settings.proxyRoutes[req.body.route].targetServer = req.body.targetServer;
                 var output = {
                     id: req.params.appId,
                     type: '/applications',
@@ -96,9 +71,9 @@ module.exports = {
     ],
     
     /**
-     * Deletes an existing application
+     * Deletes an existing machine
      *
-     * parameters: appId
+     * parameters: machineId
      * produces: 
      */
     delete: [
@@ -114,15 +89,7 @@ module.exports = {
                 // Delete App Details incl. deployment, proxy route and statistics.
                 delete app.locals.settings.AppStatistics[req.params.appId];
                 delete app.locals.settings.proxyRoutes[appDetails.route];
-                delete app.locals.settings.Applications[req.params.appId];
-
-                fs.writeFile('./config/saved-state/applications.json',JSON.stringify(app.locals.settings.Applications),function(err){
-                    if(err){console.log('Failed to update local applications state file');}
-                });
-
-                fs.writeFile('./config/saved-state/proxyRoutes.json',JSON.stringify(app.locals.settings.proxyRoutes),function(err){
-                    if(err){console.log('Failed to update proxy routes file');}
-                });
+                delete appDetails;
             }
 
             if(!appDetails){
@@ -137,7 +104,7 @@ module.exports = {
                 res.send(output);
             } else {
                 var output = {
-                    id: req.params.appId,
+                    id: appId,
                     type: '/applications',
                     action: 'Delete',
                     result:'Success',

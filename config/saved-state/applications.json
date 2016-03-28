@@ -1,0 +1,1 @@
+[null,{"appId":1,"title":"Party","targetServer":"http://localhost:8202","route":"party.industryswarm.dev","Deployments":[null,{"deployId":1,"gitRepository":"","zipLocation":"","zipUploaded":true,"status":"Installing Modules..."}],"latestDeployId":1}]

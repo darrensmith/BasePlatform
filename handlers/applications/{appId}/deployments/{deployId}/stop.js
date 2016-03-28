@@ -45,7 +45,10 @@ module.exports = {
             }
 
             // Kill child process
-            app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId].kill('SIGINT');
+            if(app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId]){
+                app.locals.settings.deployedProcesses[req.params.appId+'-'+req.params.deployId].kill('SIGINT');
+                application.Deployments[req.params.deployId].status = "Stopped";                
+            }
 
             var output = {
                 id: '',

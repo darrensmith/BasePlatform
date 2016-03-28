@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var swaggerize = require('swaggerize-express');
 var path = require('path');
 var passport = require('passport');
-var database = require('./lib/database');
 var session = require('express-session');
 var flash = require('connect-flash');
 var genuuid = require('uid2');
@@ -15,19 +14,10 @@ var BasicStrategy = require('passport-http').BasicStrategy;
 var BearerStrategy = require('passport-http-bearer').Strategy;
 var httpProxy = require('http-proxy');
 var multer = require('multer');
+var fs = require('fs');
     app = express();
 
 global.__base = __dirname + '/';
-
-// Setup database connection and models
-app.use(function (req, res, next) {
-  database(req, function (err, db) {
-    if (err) return res.send(500, "cannot connect to database");
-    req.db = db;
-    req.models = db.models;
-    next();
-  });
-});
 
 app.use(session({
   genid: function(req) {
@@ -71,8 +61,56 @@ passport.use(new BearerStrategy({passReqToCallback:true},
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization');
+    res.header('Access-Control-Allow-Methods', 'GET,HEAD,POST,PUT,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Authorization,Content-Type');
     next();
+});
+
+// If no applications are set attempt to read from local file
+app.use(function(req, res, next) {
+  if(app.locals.settings.PlatformDetails.length == 0){
+    fs.readFile('./config/saved-state/platformDetails.json','utf8',function(err,data){
+      if(!err && data){
+        app.locals.settings.PlatformDetails = JSON.parse(data);
+      }
+    });
+  }
+  if(app.locals.settings.Applications.length == 0){
+    console.log('Reading app file');
+    fs.readFile('./config/saved-state/applications.json','utf8',function(err,data){
+      if(err){
+        console.log('Attempted to load applications from filesystem - No applications known');
+        next();
+      } else if (!err && data) {
+        console.log('Updating app file');
+        app.locals.settings.Applications = JSON.parse(data);
+        fs.readFile('./config/saved-state/latestAppId.json','utf8',function(err,data){
+          app.locals.settings.latestAppId = data;
+          next();
+        });
+      } else {
+        console.log('error reading file');
+        next();
+      }
+    });
+    fs.readFile('./config/saved-state/appStatistics.json','utf8',function(err,data){
+      if(!err && data){
+        app.locals.settings.AppStatistics = JSON.parse(data);
+      }
+    });
+    fs.readFile('./config/saved-state/proxyRoutes.json','utf8',function(err,data){
+      if(!err && data){
+        app.locals.settings.proxyRoutes = JSON.parse(data);
+      }
+    });
+    fs.readFile('./config/saved-state/CurrentPortNumber.json','utf8',function(err,data){
+      if(!err && data){
+        app.locals.settings.CurrentPortNumber = data;
+      }
+    });
+  } else {
+    next();
+  }
 });
 
 // Setup Swagger and API endpoints
@@ -90,15 +128,27 @@ server.listen(8180, function () {});
 
 app.locals.settings.proxyRoutes = {};
 app.locals.settings.Applications = [];
+app.locals.settings.AppDeployments = [];
 app.locals.settings.latestAppId = 1;
 app.locals.settings.Machines = [];
 app.locals.settings.latestMachineId = 1;
 app.locals.settings.AppStatistics = [];
 app.locals.settings.deployedProcesses = [];
+app.locals.settings.PlatformDetails = [];
+app.locals.settings.CurrentPortNumber = 8200;
 
 // Start proxy listening on port x
 var proxy = httpProxy.createProxyServer({});
 var proxyServer = http.createServer(function(req,res){
+
+  res.oldWriteHead = res.writeHead;
+  res.writeHead = function(statusCode, headers) {
+    var contentType = res.getHeader('content-type');
+    res.setHeader('BasePlatformVersion', '1.0'); 
+    res.oldWriteHead(statusCode, headers);
+  }
+
+
   var host = req.headers.host;
   var hostParts = host.split(':');
   if(app.locals.settings.proxyRoutes[hostParts[0]]){
